@@ -156,7 +156,7 @@ void setup()
 }
 
 void loop() 
-// loop() function is used to execute a cycle of content repeatedly
+
 {
   LANE1();
   LANE2();
@@ -215,50 +215,6 @@ void LANE4()
 }
 
 
-// void serialEvent1()
-// //This Function is used to check the RFID code number & verify the ambulance
-// {
-//   Serial.println("A");
-//   while(Serial3.available()==0);
-//   // when no interrupt is received then serial3 is 0
-//   // then print 'A' in arduino serial command bar 
-
-//   Serial.println("B");
-//    if(Serial3.available()>0)
-//    // serial3 is 1 then interrupt signal is received
-//   {
-//     message=Serial3.readString();
-//     //read the string sent in interrupt & store in message variable
-//     Serial.println(message);
-//     // print the string which was sent
-
-//      int str_len = message.length();
-//      // str_len is equal to the length of the string 
-
-//      char textmessage[8];
-//      // creating a character array called textmessage of length 9
-//      message.toCharArray(textmessage,str_len);
-//      Serial.println(textmessage);
-//      textmessage[8]='\0';
-//      //assign last value of string as null value 
-
-
-//      if(strcmp(textmessage,"08533047")==0)
-//      // compare the read string with the prestored value 
-//      // here rfid tag of the ambulance is 08533047 
-//      // so if the read string is same then card is valid
-//       {          
-//         lcd.clear();          
-//         lcd.setCursor(1, 0);
-//         lcd.print("Card is Valid");          
-//         lcd.setCursor(0, 1);
-//         delay(3000);
-//         lcd.clear();
-//       }
-//   }
-// }
-
-
 void COUNT(){
   count=1;
   Serial.print(count);
@@ -267,7 +223,6 @@ void COUNT(){
   {
     lcd.clear();
     sound();
-    //sound fun() is used to make the lane Green
     lcd.setCursor(0,0);
     lcd.print("EMERGENCY");
     lcd.setCursor(0,1);
@@ -286,15 +241,7 @@ void COUNT(){
       loop();
     }
   }
-//  void COUNT1(){
-//  count=0;
-//  Serial.print(count);
-//  
-//  if(count==0)
-//  {
-//    sound1();
-//    }
-//  }
+
 void sound() 
 //making lane 1 green
 {
